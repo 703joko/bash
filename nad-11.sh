@@ -38,6 +38,6 @@ git clone https://github.com/SakilMondal/android_hardware_qcom-caf_wlan -b linea
 
 # Build Rom
 . build/envsetup.sh
-lunch nad_santoni-userdebug
-export KBUILD_BUILD_USER="ZHANtech™"; export KBUILD_BUILD_HOST="batikholic"
-mka nad -j40
+lunch nad_RMX1971-userdebug
+export KBUILD_BUILD_USER="jrInfected™"; export KBUILD_BUILD_HOST="jrmod.inc"
+mka nad -j$(nproc --all)
