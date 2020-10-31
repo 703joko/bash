@@ -36,6 +36,9 @@ ccache -M 150G
 rm -rf hardware/qcom-caf/wlan
 git clone https://github.com/SakilMondal/android_hardware_qcom-caf_wlan -b lineage-18.0 hardware/qcom-caf/wlan
 
+# Neverallow
+export SELINUX_IGNORE_NEVERALLOWS=true
+
 # Build Rom
 . build/envsetup.sh
 lunch nad_RMX1971-userdebug
