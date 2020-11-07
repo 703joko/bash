@@ -10,9 +10,9 @@ rm -rf out
 rm -rf out/.lock
 
 # Hapus Tree
-rm -rf device/xiaomi/santoni
-rm -rf kernel/xiaomi/msm8937
-rm -rf vendor/xiaomi
+rm -rf device/realme/RMX1971
+rm -rf kernel/realme/RMX1971
+rm -rf vendor/realme/RMX1971
 
 # Hapus Qcom Power
 rm -rf vendor/qcom/opensource/power
@@ -21,9 +21,7 @@ rm -rf vendor/qcom/opensource/power
 rm -rf prebuilts/clang/host/linux-x86/clang-12
 
 # Clone Tree
-git clone https://github.com/NusantaraROM-Devices/device_xiaomi_santoni.git -b 11 device/xiaomi/santoni
-git clone https://github.com/zhantech/android_kernel_xiaomi_santoni.git -b luuvy-4.9 kernel/xiaomi/msm8937
-git clone https://github.com/NusantaraROM-Devices/vendor_xiaomi_santoni.git -b 11 vendor/xiaomi/
+git clone https://github.com/NusantaraROM-Devices/device_realme_RMX1971.git -b R device/realme/RMX1971 && git clone https://github.com/703joko/Nusa_Kernel_realme_RMX1971 -b 11 kernel/realme/RMX1971 && git clone https://github.com/NusantaraROM-Devices/vendor_realme_RMX1971.git -b 11 vendor/realme/RMX1971
 
 # Clone Toolclain
 git clone https://github.com/kdrag0n/proton-clang --depth=1 prebuilts/clang/host/linux-x86/clang-12
