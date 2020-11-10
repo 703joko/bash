@@ -1,3 +1,35 @@
+# Prepare Ubuntu
+sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade
+
+# Prepare Build Tools
+=======================
+# get superuser access.
+
+sudo su
+
+# install JDK (press enter 2 times).
+
+add-apt-repository ppa:openjdk-r/ppa
+
+# update all packages.
+
+apt-get update
+
+# install more packages.
+
+apt-get install bison build-essential curl ccache flex lib32ncurses5-dev lib32z1-dev libesd0-dev libncurses5-dev libsdl1.2-dev libxml2 libxml2-utils lzop pngcrush schedtool squashfs-tools xsltproc zip zlib1g-dev git-core make phablet-tools gperf openjdk-8-jdk -y
+
+# become a normal user.
+
+exit
+
+# creating a bin folder.
+
+mkdir ~/bin && PATH=~/bin:$PATH && cd ~/bin && curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+
+chmod a+x ~/bin/repo && git clone https://github.com/akhilnarang/scripts.git scripts && cd scripts && bash setup/android_build_env.sh
+=================================
+
 # Buka Directory
 cd ~/nad-11
 
