@@ -20,8 +20,11 @@ rm -rf vendor/qcom/opensource/power
 # Hapus Toolclain
 rm -rf prebuilts/clang/host/linux-x86/clang-12
 
-# Clone Tree
+# Clone Tree 1
 git clone https://github.com/NusantaraROM-Devices/device_realme_RMX1971.git -b R device/realme/RMX1971 && git clone https://github.com/703joko/Nusa_Kernel_realme_RMX1971 -b 11 kernel/realme/RMX1971 && git clone https://github.com/NusantaraROM-Devices/vendor_realme_RMX1971.git -b 11 vendor/realme/RMX1971
+
+# Clone Tree 2
+git clone https://github.com/NusantaraROM-Devices/device_realme_RMX1971.git -b R device/realme/RMX1971 && git clone https://github.com/LuckVii/kernel_realme_RMX1971.git -b 11 kernel/realme/RMX1971 && git clone https://github.com/NusantaraROM-Devices/vendor_realme_RMX1971.git -b 11 vendor/realme/RMX1971
 
 # Clone Toolclain
 git clone https://github.com/kdrag0n/proton-clang --depth=1 prebuilts/clang/host/linux-x86/clang-12
