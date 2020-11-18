@@ -61,6 +61,9 @@ git clone https://github.com/NusantaraROM-Devices/device_realme_RMX1971.git -b R
 # Clone Toolclain
 git clone https://github.com/kdrag0n/proton-clang --depth=1 prebuilts/clang/host/linux-x86/clang-12
 
+# Hals Display SDM845
+git clone https://github.com/Nusantara-ROM/android_hardware_qcom_display -b 11-845 hardware/qcom-caf/sdm845/display
+
 # Use Cache
 export USE_CCACHE=1
 ccache -M 150G
