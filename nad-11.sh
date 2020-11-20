@@ -75,21 +75,24 @@ git clone https://github.com/kdrag0n/proton-clang --depth=1 prebuilts/clang/host
 # Hals Display SDM845
 git clone https://github.com/Nusantara-ROM/android_hardware_qcom_display -b 11-845 hardware/qcom-caf/sdm845/display
 
-# Use Cache
-export USE_CCACHE=1
-ccache -M 150G
+# Build Rom
+. build/envsetup.sh && lunch nad_RMX1971-userdebug
 
-# Fix Hotspot
-rm -rf hardware/qcom-caf/wlan
-git clone https://github.com/SakilMondal/android_hardware_qcom-caf_wlan -b lineage-18.0 hardware/qcom-caf/wlan
+# Set Cache
+export USE_CCACHE=1
+ccache -M 50G
 
 # Neverallow
 export SELINUX_IGNORE_NEVERALLOWS=true
 
-# Build Rom
-. build/envsetup.sh && lunch nad_RMX1971-userdebug
 export KBUILD_BUILD_USER="jrInfected™"; export KBUILD_BUILD_HOST="jrmod.inc"
+
+# Masak
 mka nad -j$(nproc --all)
+
+# Fix Hotspot
+rm -rf hardware/qcom-caf/wlan
+git clone https://github.com/SakilMondal/android_hardware_qcom-caf_wlan -b lineage-18.0 hardware/qcom-caf/wlan
 
 # Hals 
 sudo rm -R hardware/qcom-caf/sdm845/audio && sudo rm -R hardware/qcom-caf/sdm845/media && sudo rm -R hardware/qcom-caf/sdm845/display && git clone https://github.com/LineageOS/android_hardware_qcom_audio.git -b lineage-17.1-caf-sdm845 hardware/qcom-caf/sdm845/audio && cd hardware/qcom-caf/sdm845/audio && git fetch https://github.com/PotatoProject-next/hardware_qcom_audio.git d-staging1-caf-sdm845 && git cherry-pick 3dac2939b38b30addf6d4dbcf4410e6c4954fabf && cd && cd nad && git clone https://github.com/LineageOS/android_hardware_qcom_media.git -b lineage-17.1-caf-sdm845 hardware/qcom-caf/sdm845/media && git clone https://github.com/LineageOS/android_hardware_qcom_display.git -b lineage-17.1-caf-sdm845 hardware/qcom-caf/sdm845/display && cd hardware/qcom-caf/sdm845/display && git fetch https://github.com/PotatoProject-next/hardware_qcom_display.git d-staging1-caf-sdm845 && git cherry-pick 14998d0d45a6a54b6296c45732c11e256545ffb8^..2f8f16a825fea46b5497cbcdbf98ec6a5bae2e88 && cd && cd nad
