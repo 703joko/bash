@@ -33,6 +33,14 @@ chmod a+x ~/bin/repo && git clone https://github.com/akhilnarang/scripts.git scr
 # Buka Directory
 cd ~/nad-11
 
+=========
+# Generate SSH
+ssh-keygen -t ed25519 -C "703joko@gmail.com"
+
+eval "$(ssh-agent -s)"
+
+ssh-add ~/.ssh/id_ed25519
+=========
 # Sync Repo
 repo init -u ssh://git@github.com/Nusantara-ROM/android.git -b 11
 repo sync --force-sync --no-tags --no-clone-bundle
